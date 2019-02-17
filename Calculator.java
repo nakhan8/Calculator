@@ -4,51 +4,65 @@ package cse360assign3;
  * @author Nabeel Asif
  * @version February 16, 2019
  */
-public class Calculator {
 
- 	private int total;
+public class Calculator {
+	
+	private int total;
+	
 	/**
 	 * Create a Calculator object and set to total value to 0
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
 	}
+	
 	/**
 	 * When you call this function the total will be returned.
 	 * Right now it will just return 0.
 	 * @return
 	 */
+	
 	public int getTotal () {
-		return 0;
+		return total;
 	}
+	
 	/**
 	 * add will simply add the value that is inputed in the method signature
 	 * @param value - the value to be added
 	 */
 	public void add (int value) {
-
- 	}
+		total = total + value;
+	}
+	
 	/**
 	 * subtract will simply subtract the value that is inputed in the method signature
 	 * @param value - the value to be subtracted
 	 */
 	public void subtract (int value) {
-
- 	}
+		total = total - value;
+	}
+	
 	/**
 	 * multiply will simply multiply the value that is inputed in the method signature.
 	 * @param value - the value to be multiplied
 	 */
 	public void multiply (int value) {
-
- 	}
+		total = total * value;
+	}
+	
 	/**
 	 * divide will simply divide the value that is inputed in the method signature.
 	 * @param value - the value to be divided
 	 */
 	public void divide (int value) {
-
- 	}
+		if (value != 0) {
+			total = (int) Math.floor(total / value);
+		}
+		else {
+			total = 0;
+		}
+	}
+	
 	/**
 	 * getHistory will return the calculation history that was done previously.
 	 * @return will return the calculation history.
@@ -56,4 +70,5 @@ public class Calculator {
 	public String getHistory () {
 		return "";
 	}
+
 }
